@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  // .form__title
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  // .form__aftertitle
+
+  &__aftertitle {
+    margin-top: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  // .form__input
+
+  &__input {
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: $cl-light;
+    border-radius: 22px;
+    border: 0;
+    outline: transparent;
+    transition: box-shadow 0.2s ease;
+
+    &:focus {
+      box-shadow: -3px 3px 5px $cl-light, 3px -3px 3px $cl-light,
+        3px 3px 3px $cl-light, -3px -3px 3px $cl-light;
+    }
+  }
+
+  // .form__button
+
+  &__button {
+  }
+}
+.button {
+}
