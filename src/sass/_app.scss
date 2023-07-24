@@ -1,17 +1,6 @@
 body {
-  display: flex;
-  justify-content: center;
   height: 100dvh;
   padding-top: 10px;
   font-family: $ff-main;
   background-color: $cl-bg-main;
-}
-
-.intro-bg {
-  height: 150px;
-  width: 100%;
-  background-image: url('../assets/intro.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }

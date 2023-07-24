@@ -1,0 +1,74 @@
+.form-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100dvh;
+
+  &__img {
+    height: 150px;
+  }
+}
+
+.form {
+  position: absolute;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  // .form__title
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    &--offset {
+      margin-bottom: 20px;
+    }
+  }
+
+  // .form__aftertitle
+
+  &__aftertitle {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  // .form__input
+
+  &__input {
+    height: 45px;
+    padding: 15px 20px;
+    background: $cl-light;
+    border-radius: 22px;
+    border: 0;
+    outline: transparent;
+    transition: box-shadow 0.2s ease;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &:focus {
+      box-shadow: -3px 3px 5px $cl-light, 3px -3px 3px $cl-light,
+        3px 3px 3px $cl-light, -3px -3px 3px $cl-light;
+    }
+  }
+
+  &__forgot-password-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 15px;
+    padding-right: 20px;
+    text-align-last: right;
+  }
+
+  &__button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}

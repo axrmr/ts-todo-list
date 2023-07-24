@@ -1,4 +1,4 @@
-<form class="form signup-form" action="#">
+<form id="signUpForm" class="form signup-form" action="#">
   <strong class="form__title signup-form__title"
     >Get’s things done with TODO</strong
   >
@@ -6,26 +6,42 @@
     Let’s help you meet up your tasks
   </p>
   <input
-    type="text"
+    id="signUpUserName"
     class="form__input signup-form__input"
+    type="text"
+    name="userName"
     placeholder="Enter your full name"
+    required
   />
   <input
+    id="signUpEmail"
+    class="form__input signup-form__input"
     type="text"
-    class="form__input signup-form__input"
+    name="userEmail"
     placeholder="Enter your email"
-    pattern="^[A-Za-z\u0080-\uFFFF ']+$"
+    required
   />
   <input
+    id="signUpPassword"
     class="form__input signup-form__input"
     type="password"
+    name="userPassword"
     placeholder="Enter password"
+    required
   />
   <input
+    id="signUpConfirmPassword"
     class="form__input signup-form__input"
     type="password"
+    name="userConfirmPassword"
     placeholder="Confirm password"
+    required
   />
-  <button class="button form__button signup-form__button">Register</button>
-  <p>Already have an account ? <button>Sign In</button></p>
+  <button id="registerButton" class="button form__button register-form__button">
+    Register
+  </button>
+  <p class="">
+    Already have an account ?
+    <button id="logInButton" class="login-button" type="button">Log in</button>
+  </p>
 </form>
