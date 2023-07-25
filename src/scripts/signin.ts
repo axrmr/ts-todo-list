@@ -18,9 +18,6 @@ const onSubmit = (e: SubmitEvent) => {
 
   signInEmailPassword(email, password).then(res => {
     console.log('logof res -> ', res);
-    refs.signInForm.addEventListener('transitionend', () => {
-      document.getElementById('form-wrapper')?.classList.add('is-visible');
-    });
   });
 
   refs.signInForm.reset();

@@ -1,18 +1,5 @@
-.form-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 100dvh;
-
-  &__img {
-    height: 150px;
-  }
-}
-
 .form {
   position: absolute;
-  top: 150px;
   display: flex;
   flex-direction: column;
   max-width: 400px;

@@ -9,22 +9,17 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="sass/index.scss" />
-    <title>Todo</title>
+    <link rel="stylesheet" href="../../sass/profile.scss" />
+    <title>Profile</title>
   </head>
   <body>
     <main>
-      <section>
+      <section class="profile">
         <div class="container">
-          <div id="form-wrapper" class="form-wrapper">
-            <img class="form-wrapper__img" src="./assets/intro.png" alt="" />
-            <include src="./partials/signup-form.html"></include>
-            <include src="./partials/signin-form.html"></include>
-          </div>
+          <include src="partials/components/profile-head.html"></include>
+          <!-- <include src="partials/components/profile-body.html"></include> -->
         </div>
       </section>
     </main>
-
-    <script type="module" src="main.ts"></script>
   </body>
 </html>

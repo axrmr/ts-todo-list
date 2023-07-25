@@ -1,0 +1,11 @@
+@import './variables';
+@import './reset';
+
+@import './components/container';
+@import './components/buttons';
+
+body {
+  font-family: $ff-main;
+  color: $cl-dark;
+  background-color: $cl-bg-main;
+}
