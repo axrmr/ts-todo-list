@@ -4,3 +4,7 @@
   pointer-events: none;
   z-index: -1;
 }
+
+.append-animation {
+  animation: append-animate 0.5s linear;
+}

@@ -1,8 +1,11 @@
 import { initializeApp } from 'firebase/app';
 import {
+  Auth,
   createUserWithEmailAndPassword,
   getAuth,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 
 const firebaseApp = initializeApp({
@@ -15,9 +18,13 @@ const firebaseApp = initializeApp({
   measurementId: 'G-5JDDM3CVY5',
 });
 
-const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
 
-export const signUpEmailPassword = async (email: string, password: string) => {
+export const signUpEmailPassword = async (
+  auth: Auth,
+  email: string,
+  password: string
+) => {
   try {
     const userCredentials = await createUserWithEmailAndPassword(
       auth,
@@ -30,7 +37,11 @@ export const signUpEmailPassword = async (email: string, password: string) => {
   }
 };
 
-export const signInEmailPassword = async (email: string, password: string) => {
+export const signInEmailPassword = async (
+  auth: Auth,
+  email: string,
+  password: string
+) => {
   try {
     const userCredentials = await signInWithEmailAndPassword(
       auth,
@@ -44,4 +55,8 @@ export const signInEmailPassword = async (email: string, password: string) => {
   } catch (err) {
     console.log(err.message);
   }
+};
+
+export const logOut = async (auth: Auth) => {
+  await signOut(auth);
 };

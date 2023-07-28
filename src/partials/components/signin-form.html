@@ -9,7 +9,7 @@
   <input
     id="signInEmail"
     class="form__input signin-form__input"
-    type="text"
+    type="email"
     name="userEmail"
     placeholder="Enter your email"
     required
@@ -23,13 +23,14 @@
     required
   />
   <a class="form__forgot-password-link" href="#">Forgot password?</a>
-  <button id="signInButton" class="button form__button signin-form__button">
+  <button
+    id="signInBtn"
+    class="button form__button form__button--offsetY signin-form__button"
+  >
     Sign in
   </button>
   <p>
     Don't have an account ?
-    <button id="signUpButton" class="signup-button" type="button">
-      Sign up
-    </button>
+    <button id="signUpBtn" class="signup-button" type="button">Sign up</button>
   </p>
 </form>

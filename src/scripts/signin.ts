@@ -1,5 +1,5 @@
-import { signInEmailPassword } from './firebase';
-import { getRefs } from './getRefs';
+import { auth, signInEmailPassword } from '../API/firebase';
+import getRefs from './getRefs';
 
 const refs = getRefs();
 
@@ -16,12 +16,10 @@ const onSubmit = (e: SubmitEvent) => {
 
   if (!email || !password) return;
 
-  signInEmailPassword(email, password).then(res => {
-    console.log('logof res -> ', res);
+  signInEmailPassword(auth, email, password).then(() => {
+    refs.signInForm.reset();
   });
-
-  refs.signInForm.reset();
 };
 
 refs.signInForm.addEventListener('submit', onSubmit);
-refs.signUpButton.addEventListener('click', toggleFormVisibility);
+refs.signUpBtn.addEventListener('click', toggleFormVisibility);

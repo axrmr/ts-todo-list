@@ -1,20 +1,18 @@
 .profile {
-  .container {
-  }
   // .profile__head
 
   &__head {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding: 30px 0;
   }
 
   // .profile__img
 
   &__img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 20px;
     padding: 10px;
     border: 7px solid $cl-accent;
@@ -44,5 +42,22 @@
     line-height: 115.688%; /* 11.569px */
     letter-spacing: 0.5px;
     color: $cl-accent;
+  }
+
+  &__body {
+    min-height: 50%;
+    padding: 30px 20px;
+    background-color: $cl-light;
+    border-radius: 20px;
+  }
+
+  &__body-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 115.688%; /* 20.824px */
+    letter-spacing: 1.08px;
+    color: $cl-dark;
+    opacity: 0.75;
   }
 }

@@ -1,0 +1,48 @@
+.create-task-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  // .tasks-form__input
+
+  &__input {
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 20px;
+    border: 0;
+    outline: transparent;
+    opacity: 0.5;
+    border-bottom: 1px solid lightgrey;
+    transition: box-shadow $transition, opacity $transition;
+
+    &:focus {
+      opacity: 1;
+      transition: scale(1.05);
+    }
+  }
+
+  // .tasks-form__add-button
+
+  &__button {
+    width: 60px;
+    height: 50px;
+    font-size: 40px;
+    color: $cl-sec-accent;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    transition: color $transition;
+
+    &:hover {
+      color: orange;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+    }
+  }
+}

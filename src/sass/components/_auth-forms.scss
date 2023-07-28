@@ -6,7 +6,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: opacity $transition, visibility $transition;
 
   // .form__title
 
@@ -57,5 +57,9 @@
   &__button {
     margin-top: 20px;
     margin-bottom: 10px;
+
+    &--offsetY {
+      margin-top: 40px;
+    }
   }
 }

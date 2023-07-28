@@ -16,10 +16,24 @@
     <main>
       <section class="profile">
         <div class="container">
-          <include src="partials/components/profile-head.html"></include>
-          <!-- <include src="partials/components/profile-body.html"></include> -->
+          <div class="profile__head">
+            <div class="profile__img">
+              <img src="../../assets/avatart.png" alt="Monica Gamage" />
+            </div>
+            <h2 class="profile__title">Monica Gamage</h2>
+            <span class="profile__nickname">@monicagamage</span>
+            <button id="logOutBtn" class="logout-button">Log Out</button>
+          </div>
+          <div class="profile__body">
+            <h2 class="profile__body-title">Tasks List</h2>
+            <include
+              src="./partials/components/create-task-form.html"
+            ></include>
+            <include src="./partials/components/tasks-list.html"></include>
+          </div>
         </div>
       </section>
     </main>
+    <script src="../../profile.ts" type="module"></script>
   </body>
 </html>

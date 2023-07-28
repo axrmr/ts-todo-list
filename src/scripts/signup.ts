@@ -1,5 +1,5 @@
-import { signUpEmailPassword } from './firebase';
-import { getRefs } from './getRefs';
+import { auth, signUpEmailPassword } from '../API/firebase';
+import getRefs from './getRefs';
 
 const refs = getRefs();
 
@@ -18,7 +18,7 @@ const onSubmit = (e: SubmitEvent) => {
 
   if (!email || !password || password !== confirmPassword) return;
 
-  signUpEmailPassword(email, password).then(res => {
+  signUpEmailPassword(auth, email, password).then(res => {
     console.log('logof email, password -> ', email, password);
     console.log('logof res -> ', res);
     toggleFormVisibility();
@@ -28,4 +28,4 @@ const onSubmit = (e: SubmitEvent) => {
 };
 
 refs.signUpForm.addEventListener('submit', onSubmit);
-refs.logInButton.addEventListener('click', toggleFormVisibility);
+refs.logInBtn.addEventListener('click', toggleFormVisibility);
