@@ -14,20 +14,19 @@ const refs = getRefs();
 const allTasks: Task[] = loadTasks(TASKS_STORAGE_KEY);
 addTask(allTasks, refs.tasksList);
 
-const onSubmitCreateTask = (e: Event) => {
+const onSubmitCreateTask = (e: SubmitEvent) => {
   e.preventDefault();
   const taskVal = refs.taskInput.value.trim();
 
   if (!taskVal || isHaveTask(allTasks, taskVal)) return;
 
-  const id = Date.now();
   const newTask: Task = {
-    id,
+    id: Date.now(),
     value: taskVal,
     isCompleted: false,
   };
 
-  allTasks.push(newTask);
+  allTasks.unshift(newTask);
 
   addTask(allTasks, refs.tasksList);
   saveTasks(allTasks, TASKS_STORAGE_KEY);
@@ -35,22 +34,41 @@ const onSubmitCreateTask = (e: Event) => {
   refs.taskInput.value = '';
 };
 
-refs.createTaskForm.addEventListener('click', onSubmitCreateTask);
+refs.createTaskForm.addEventListener('submit', onSubmitCreateTask);
+
+const sortIsCompleted = () => {
+  allTasks.sort((a, b) => {
+    const first = a.isCompleted ? 1 : -1;
+    const sec = b.isCompleted ? 1 : -1;
+
+    return first - sec;
+  });
+
+  document.querySelectorAll('.task').forEach(task => {
+    task.addEventListener('transitionend', () => {
+      const id = setTimeout(() => {
+        addTask(allTasks, refs.tasksList);
+        saveTasks(allTasks, TASKS_STORAGE_KEY);
+        clearTimeout(id);
+      }, 100);
+    });
+  });
+};
 
 const onClickTasksList = (e: any) => {
-  if (
-    e.target.classList.contains('task__custom-check') ||
-    e.target.classList.contains('task__name')
-  ) {
+  const customCheck = e.target.classList.contains('task__custom-check');
+  const taskName = e.target.classList.contains('task__name');
+
+  if (customCheck || taskName) {
     const id = +e.target.closest('li').id;
 
     toggleCompleted(allTasks, id);
+    sortIsCompleted();
     saveTasks(allTasks, TASKS_STORAGE_KEY);
   } else if (e.target.classList.contains('delete-task-btn')) {
-    const id = +e.target.closest('li').id;
+    const task = e.target.closest('li');
 
-    e.target.closest('li').remove();
-    deleteTask(allTasks, id);
+    deleteTask(task, allTasks, +task.id);
     saveTasks(allTasks, TASKS_STORAGE_KEY);
   }
 };
@@ -59,7 +77,7 @@ refs.tasksList.addEventListener('click', onClickTasksList);
 
 const onClickLogOut = async () => {
   await logOut(auth);
-  location.href = 'http://localhost:4000';
+  location.pathname = '/';
 };
 
 refs.logOutBtn.addEventListener('click', onClickLogOut);

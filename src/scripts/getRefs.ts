@@ -11,9 +11,7 @@ export default function getRefs() {
     signUpConfirmPassword: document.getElementById(
       'signUpConfirmPassword'
     ) as HTMLInputElement,
-    registerBtn: document.getElementById(
-      'registerBtn'
-    ) as HTMLButtonElement,
+    registerBtn: document.getElementById('registerBtn') as HTMLButtonElement,
     signUpBtn: document.getElementById('signUpBtn') as HTMLButtonElement,
     signInForm: document.getElementById('signInForm') as HTMLFormElement,
     signInEmail: document.getElementById('signInEmail') as HTMLInputElement,
@@ -26,7 +24,7 @@ export default function getRefs() {
     logOutBtn: document.getElementById('logOutBtn') as HTMLInputElement,
     createTaskForm: document.getElementById(
       'createTaskForm'
-    ) as HTMLButtonElement,
+    ) as HTMLFormElement,
     tasksList: document.getElementById('tasksList') as HTMLUListElement,
     deleteTaskBtn: document.getElementById(
       'deleteTaskBtn'
