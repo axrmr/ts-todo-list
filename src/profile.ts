@@ -77,7 +77,7 @@ refs.tasksList.addEventListener('click', onClickTasksList);
 
 const onClickLogOut = async () => {
   await logOut(auth);
-  location.pathname = '/';
+  location.replace('/');
 };
 
 refs.logOutBtn.addEventListener('click', onClickLogOut);

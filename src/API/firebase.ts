@@ -3,7 +3,6 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   getAuth,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
@@ -20,7 +19,7 @@ const firebaseApp = initializeApp({
 
 export const auth = getAuth(firebaseApp);
 
-export const signUpEmailPassword = async (
+export const registerEmailPassword = async (
   auth: Auth,
   email: string,
   password: string
@@ -37,7 +36,7 @@ export const signUpEmailPassword = async (
   }
 };
 
-export const signInEmailPassword = async (
+export const logInEmailPassword = async (
   auth: Auth,
   email: string,
   password: string

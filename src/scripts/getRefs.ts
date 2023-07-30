@@ -1,25 +1,34 @@
 export default function getRefs() {
   return {
-    signUpForm: document.getElementById('signUpForm') as HTMLFormElement,
-    signUpUserName: document.getElementById(
-      'signUpUserName'
+    registerForm: document.getElementById('registerForm') as HTMLFormElement,
+    registerFormUserName: document.getElementById(
+      'registerFormUserName'
     ) as HTMLInputElement,
-    signUpEmail: document.getElementById('signUpEmail') as HTMLInputElement,
-    signUpPassword: document.getElementById(
-      'signUpPassword'
+    registerFormEmail: document.getElementById(
+      'registerFormEmail'
     ) as HTMLInputElement,
-    signUpConfirmPassword: document.getElementById(
-      'signUpConfirmPassword'
+    registerFormPassword: document.getElementById(
+      'registerFormPassword'
     ) as HTMLInputElement,
-    registerBtn: document.getElementById('registerBtn') as HTMLButtonElement,
-    signUpBtn: document.getElementById('signUpBtn') as HTMLButtonElement,
-    signInForm: document.getElementById('signInForm') as HTMLFormElement,
-    signInEmail: document.getElementById('signInEmail') as HTMLInputElement,
-    signInPassword: document.getElementById(
-      'signInPassword'
+    registerFormConfirmPassword: document.getElementById(
+      'registerFormConfirmPassword'
     ) as HTMLInputElement,
-    signInBtn: document.getElementById('signInBtn') as HTMLButtonElement,
-    logInBtn: document.getElementById('logInBtn') as HTMLButtonElement,
+    registerFormBtn: document.getElementById(
+      'registerFormBtn'
+    ) as HTMLButtonElement,
+
+    logInForm: document.getElementById('loginForm') as HTMLFormElement,
+    logInEmail: document.getElementById('loginFormEmail') as HTMLInputElement,
+    logInPassword: document.getElementById(
+      'loginFormPassword'
+    ) as HTMLInputElement,
+    logInBtn: document.getElementById('loginFormBtn') as HTMLButtonElement,
+    introLogInBtn: document.getElementById(
+      'introLogInBtn'
+    ) as HTMLButtonElement,
+    introRegisterBtn: document.getElementById(
+      'introRegisterBtn'
+    ) as HTMLButtonElement,
     taskInput: document.getElementById('taskInput') as HTMLInputElement,
     logOutBtn: document.getElementById('logOutBtn') as HTMLInputElement,
     createTaskForm: document.getElementById(

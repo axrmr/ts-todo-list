@@ -1,35 +1,38 @@
+.forms-wrapper {
+  display: flex;
+  gap: 100px;
+  max-width: 450px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .form {
-  position: absolute;
+  right: 50px;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  opacity: 1;
+  width: 450px;
+  padding: 0 10px;
   visibility: visible;
   pointer-events: all;
-  transition: opacity $transition, visibility $transition;
-
-  // .form__title
+  transition: transform 0.5s ease-in-out;
 
   &__title {
-    font-size: 30px;
-    text-align: center;
-    &--offset {
-      margin-bottom: 20px;
+    opacity: 0.8;
+    font-size: 33px;
+    &--offset-bt {
+      margin-bottom: 40px;
     }
   }
 
-  // .form__aftertitle
-
   &__aftertitle {
-    margin-bottom: 20px;
-    font-size: 14px;
-    text-align: center;
+    margin-bottom: 40px;
   }
 
   // .form__input
 
   &__input {
-    height: 45px;
+    width: 420px;
+    height: 50px;
     padding: 15px 20px;
     background: $cl-light;
     border-radius: 22px;
@@ -48,10 +51,11 @@
 
   &__forgot-password-link {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 15px;
-    padding-right: 20px;
-    text-align-last: right;
+    padding-left: 20px;
+    text-align-last: left;
+    opacity: 0.6;
   }
 
   &__button {
@@ -59,7 +63,7 @@
     margin-bottom: 10px;
 
     &--offsetY {
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
 }

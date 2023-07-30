@@ -5,7 +5,8 @@
 @import './components/buttons';
 
 body {
+  height: 100dvh;
   font-family: $ff-main;
   color: $cl-dark;
-  background-color: $cl-bg-main;
+  background: $gradient-main no-repeat;
 }
