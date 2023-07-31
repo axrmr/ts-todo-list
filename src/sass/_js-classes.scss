@@ -5,6 +5,10 @@
   z-index: -1;
 }
 
+.signInViaEmailFormhighlight-font {
+  color: red;
+}
+
 .append-animation {
   animation: append-animate 0.5s linear;
 }
@@ -13,10 +17,10 @@
   transform: scale(0.6);
 }
 
-.translate-left {
+.slide-left {
   transform: translateX(-120%);
 }
 
-.translate-top {
+.slide-top {
   transform: translateY(-100%);
 }

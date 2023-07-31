@@ -7,3 +7,6 @@
 @import './components/tasks-list';
 
 @import './profile-section';
+body {
+  background-color: $cl-sec-accent;
+}

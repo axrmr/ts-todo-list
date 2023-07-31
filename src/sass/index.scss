@@ -7,3 +7,10 @@
 @import './intro';
 
 @import './js-classes';
+
+body {
+  height: 100dvh;
+  font-family: $ff-main;
+  color: $cl-dark;
+  background: $gradient-main no-repeat;
+}

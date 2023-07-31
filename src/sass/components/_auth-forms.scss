@@ -19,13 +19,42 @@
   &__title {
     opacity: 0.8;
     font-size: 33px;
+
     &--offset-bt {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
   }
 
   &__aftertitle {
     margin-bottom: 40px;
+  }
+
+  &__group {
+    position: relative;
+
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .reg-confirm-psw-err,
+  .reg-psw-err,
+  .reg-email-err,
+  .log-email-err,
+  .log-psw-err {
+    position: absolute;
+    bottom: -22px;
+    left: 20px;
+    z-index: 1;
+    display: block;
+    padding: 0 10px;
+    font-size: 14px;
+    text-align: left;
+    color: red;
+    border-radius: 10px;
+    visibility: visible;
+    transform: scale(1.1);
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
   }
 
   // .form__input
@@ -39,9 +68,6 @@
     border: 0;
     outline: transparent;
     transition: box-shadow 0.2s ease;
-    &:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
 
     &:focus {
       box-shadow: -3px 3px 5px $cl-light, 3px -3px 3px $cl-light,
@@ -49,21 +75,33 @@
     }
   }
 
-  &__forgot-password-link {
-    display: inline-block;
-    margin-top: 15px;
+  &__forgot-psw-btn {
+    margin-top: 10px;
+    text-decoration: underline;
     font-size: 15px;
     padding-left: 20px;
-    text-align-last: left;
-    opacity: 0.6;
+    text-align-last: right;
+    opacity: 0.8;
+    color: black;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: blue;
+    }
   }
 
-  &__button {
+  &__btn {
     margin-top: 20px;
     margin-bottom: 10px;
-
-    &--offsetY {
-      margin-top: 20px;
+    &--reg {
+      margin-top: 25px;
+    }
+    &--login {
+      margin-top: 25px;
     }
   }
 }

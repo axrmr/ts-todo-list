@@ -1,28 +1,33 @@
-<form action="#" id="loginForm" class="form login-form intro__form">
+<form id="loginForm" class="form login-form intro__form">
   <strong class="form__title form__title--offset-bt login-form__title"
     >Welcome back to OUR REMINDER</strong
   >
-  <input
-    id="loginFormEmail"
-    class="form__input login-form__input"
-    type="email"
-    name="userEmail"
-    placeholder="Enter your email"
-    required
-  />
-  <input
-    id="loginFormPassword"
-    class="form__input login-form__input"
-    type="password"
-    name="userPassword"
-    placeholder="Enter password"
-    required
-  />
-  <a class="form__forgot-password-link" href="#">Forgot password?</a>
-  <button
-    id="logInFormBtn"
-    class="button form__button form__button--offsetY login-form__button"
-  >
+  <label class="form__group">
+    <input
+      id="loginFormEmail"
+      class="form__input login-form__input"
+      type="email"
+      name="userEmail"
+      placeholder="Enter your email"
+      required
+    />
+    <span id="logEmailError" class="log-email-err is-visible"></span>
+  </label>
+  <label class="form__group">
+    <input
+      id="loginFormPsw"
+      class="form__input login-form__input"
+      type="password"
+      name="userPassword"
+      placeholder="Enter password"
+      required
+    />
+    <span id="logPswError" class="log-psw-err"></span>
+  </label>
+  <button id="forgotPswBtn" class="form__forgot-psw-btn" type="button">
+    Forgot password?
+  </button>
+  <button id="logInFormBtn" class="btn form__btn form__btn--login">
     Log in
   </button>
 </form>

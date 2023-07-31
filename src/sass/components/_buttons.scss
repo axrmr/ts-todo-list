@@ -1,4 +1,4 @@
-.button {
+.btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +11,8 @@
   cursor: pointer;
 }
 
-.login-button,
-.signup-button {
+.login-btn,
+.signup-btn {
   font-weight: 600;
   color: $cl-accent;
   background-color: transparent;
@@ -20,17 +20,25 @@
   cursor: pointer;
 }
 
-.logout-button {
+.logout-btn {
   width: 140px;
   padding: 10px 5px;
   font-size: 14px;
   text-align: center;
-  line-height: 115.688%; /* 11.569px */
+  line-height: 115.688%;
   letter-spacing: 0.65px;
-  border-radius: 50px;
-  border: 0;
+  color: rgba(0, 0, 0, 0.7);
   background-color: $cl-sec-accent;
+  border-radius: 50px;
+  border: 1px solid $cl-accent;
   cursor: pointer;
+  transition: background-color $transition, color $transition,
+    opacity $transition;
+
+  &:hover,
+  &:focus {
+    color: $cl-sec-accent;
+    background-color: $cl-accent;
+    opacity: 0.8;
+  }
 }
-
-

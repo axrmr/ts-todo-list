@@ -1,4 +1,4 @@
-import { auth, logOut } from './API/firebase';
+import AuthAPI from './API/AuthAPI';
 import addTask from './scripts/addTask';
 import deleteTask from './scripts/deleteTask';
 import getRefs from './scripts/getRefs';
@@ -34,9 +34,9 @@ const onSubmitCreateTask = (e: SubmitEvent) => {
   refs.taskInput.value = '';
 };
 
-refs.createTaskForm.addEventListener('submit', onSubmitCreateTask);
+refs.addTaskForm.addEventListener('submit', onSubmitCreateTask);
 
-const sortIsCompleted = () => {
+const sortCompleted = () => {
   allTasks.sort((a, b) => {
     const first = a.isCompleted ? 1 : -1;
     const sec = b.isCompleted ? 1 : -1;
@@ -63,7 +63,7 @@ const onClickTasksList = (e: any) => {
     const id = +e.target.closest('li').id;
 
     toggleCompleted(allTasks, id);
-    sortIsCompleted();
+    sortCompleted();
     saveTasks(allTasks, TASKS_STORAGE_KEY);
   } else if (e.target.classList.contains('delete-task-btn')) {
     const task = e.target.closest('li');
@@ -76,7 +76,7 @@ const onClickTasksList = (e: any) => {
 refs.tasksList.addEventListener('click', onClickTasksList);
 
 const onClickLogOut = async () => {
-  await logOut(auth);
+  await AuthAPI.logOut();
   location.replace('/');
 };
 
