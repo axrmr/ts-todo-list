@@ -1,4 +1,4 @@
-import Task from '../types/types';
+import { Task } from '../types/types';
 
 export default function addTask(tasks: Task[], rootEl: HTMLElement) {
   const markup = tasks.map(({ id, value, isCompleted }) => {

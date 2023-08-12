@@ -3,7 +3,6 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   sendPasswordResetEmail,
-  sendSignInLinkToEmail,
   signInWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
@@ -20,11 +19,6 @@ const firebaseApp = initializeApp({
 
 export const auth = getAuth(firebaseApp);
 
-const actionCodeSettings = {
-  url: 'http://localhost:4000/profile.html',
-  handleCodeInApp: true,
-};
-
 export default class AuthAPI {
   static async registerEmailPassword(email: string, password: string) {
     const userCredentials = await createUserWithEmailAndPassword(
@@ -34,6 +28,7 @@ export default class AuthAPI {
     );
     return userCredentials;
   }
+
   static async logInEmailPassword(email: string, password: string) {
     const userCredentials = await signInWithEmailAndPassword(
       auth,
@@ -42,21 +37,17 @@ export default class AuthAPI {
     );
     return userCredentials;
   }
+
   static async logOut() {
     await signOut(auth);
   }
+
   static async resetPasswordEmail(email: string) {
     const res = await sendPasswordResetEmail(auth, email);
     return res;
   }
 
-  static async logInViaEmail(email: string) {
-    try {
-      sendSignInLinkToEmail(auth, email, actionCodeSettings);
-      window.localStorage.setItem('emailForSignIn', email);
-    } catch (err) {
-      const errorCode = err.code;
-      const errorMessage = err.message;
-    }
+  static async sendResetPswEmail(email: string) {
+    return await sendPasswordResetEmail(auth, email);
   }
 }

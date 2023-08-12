@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./sass/profile.scss" />
+    <link rel="stylesheet" href="./sass/layouts/profile.scss" />
     <title>Profile</title>
   </head>
   <body>
@@ -18,7 +18,16 @@
         <div class="container">
           <div class="profile__head">
             <div class="profile__img">
-              <img src="./assets/avatart.png" alt="Monica Gamage" />
+              <span id="profileImg"></span>
+              <label class="profile__label">
+                <input
+                  id="inputFile"
+                  class="profile__input-file"
+                  type="file"
+                  title="Click to upload an image."
+                />
+                <span class="profile__add-img-icon">+</span>
+              </label>
             </div>
             <h2 class="profile__title">Monica Gamage</h2>
             <span class="profile__nickname">@monicagamage</span>

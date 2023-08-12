@@ -1,4 +1,4 @@
-import Task from '../types/types';
+import { Task } from '../types/types';
 
 export default function deleteTask(
   el: HTMLLIElement,

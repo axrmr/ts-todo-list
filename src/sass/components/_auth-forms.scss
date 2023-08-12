@@ -1,20 +1,10 @@
-.forms-wrapper {
-  display: flex;
-  gap: 100px;
-  max-width: 450px;
-  width: 100%;
-  overflow: hidden;
-}
-
 .form {
-  right: 50px;
   display: flex;
   flex-direction: column;
-  width: 450px;
   padding: 0 10px;
   visibility: visible;
   pointer-events: all;
-  transition: transform 0.5s ease-in-out;
+  transition: transform $form-transition, opacity $form-transition;
 
   &__title {
     opacity: 0.8;
@@ -37,26 +27,6 @@
     }
   }
 
-  .reg-confirm-psw-err,
-  .reg-psw-err,
-  .reg-email-err,
-  .log-email-err,
-  .log-psw-err {
-    position: absolute;
-    bottom: -22px;
-    left: 20px;
-    z-index: 1;
-    display: block;
-    padding: 0 10px;
-    font-size: 14px;
-    text-align: left;
-    color: red;
-    border-radius: 10px;
-    visibility: visible;
-    transform: scale(1.1);
-    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
-  }
-
   // .form__input
 
   &__input {
@@ -76,21 +46,33 @@
   }
 
   &__forgot-psw-btn {
+    position: relative;
+    width: 160px;
     margin-top: 10px;
-    text-decoration: underline;
+    margin-left: auto;
     font-size: 15px;
-    padding-left: 20px;
-    text-align-last: right;
     opacity: 0.8;
     color: black;
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    transition: color $transition;
 
-    &:hover,
-    &:focus {
-      color: blue;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 5px;
+      height: 1px;
+      width: 0;
+      background-color: $cl-dark;
+      opacity: 0.4;
+      transition: width $transition;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 90%;
     }
   }
 

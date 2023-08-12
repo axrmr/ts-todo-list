@@ -1,5 +1,6 @@
-.intro {
-  padding: 40px 0;
+.hero {
+  padding: 30px 0;
+  background: $gradient-main no-repeat;
 
   .container {
     position: relative;
@@ -36,6 +37,7 @@
     margin: 0 0 10px;
     font-size: 30px;
     text-align: center;
+
     &--offset {
       margin-bottom: 20px;
     }
@@ -47,11 +49,28 @@
     text-align: center;
   }
 
-  &-btns-wrap {
-    height: 20px;
+  &__bottom {
+    display: flex;
+    gap: 50px;
+    max-width: 450px;
     overflow: hidden;
-    & > div {
-      transition: transform 0.3s ease-in-out;
+  }
+
+  &__form {
+    &--reset-psw {
+      transform: translateX(-150%);
     }
+    &--login {
+      transform: translateX(-110%);
+    }
+  }
+
+  &__btns-wrapper {
+    overflow: hidden;
+    height: 22px;
+  }
+
+  &__btns-list {
+    transition: transform $form-transition;
   }
 }

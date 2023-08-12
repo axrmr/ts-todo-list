@@ -9,34 +9,53 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="stylesheet" href="./sass/layouts/index.scss" />
     <title>Todo</title>
   </head>
   <body>
     <main>
-      <section class="intro">
+      <section class="hero">
         <div class="container">
-          <div class="intro__inner">
-            <img class="intro__img" src="assets/intro.png" alt="" />
-            <div class="intro-btns-wrap">
-              <div class="">
-                <span>Already have an account ?</span
-                ><button id="introLogInBtn" class="login-btn" type="button">
-                  Log in
-                </button>
-              </div>
-              <div class="">
-                <span>Don't have an account ?</span>
-                <button id="introRegBtn" class="signup-btn" type="button">
-                  Register
-                </button>
-              </div>
+          <div class="hero__top">
+            <img
+              class="hero__img"
+              src="assets/hero.png"
+              alt="Geometrical figures."
+            />
+            <div class="hero__btns-wrapper">
+              <ul
+                id="heroBtnsList"
+                class="hero__btns-list reg-visible reset-list"
+              >
+                <li class="hero__btns-item hero__btns-item--back-to-login">
+                  <span> Back to</span>
+                  <button
+                    id="back-to-login"
+                    class="back-to-login-btn hero__btns-item--reset"
+                    type="button"
+                  >
+                    Log in
+                  </button>
+                </li>
+                <li class="hero__btns-item hero__btns-item--reg">
+                  <span>Don't have an account ?</span>
+                  <button id="register" class="register-btn" type="button">
+                    Register
+                  </button>
+                </li>
+                <li class="hero__btns-item hero__btns-item--login">
+                  <span>Already have an account ?</span
+                  ><button id="login" class="login-btn" type="button">
+                    Log in
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="forms-wrapper">
-            <include src="./partials/components/login-form.html"></include>
+          <div class="hero__bottom">
+            <include src="./partials/components/reset-psw-form.html"></include>
+            <include src="./partials/components/logIn-form.html"></include>
             <include src="./partials/components/register-form.html"></include>
-            <!-- <include src="./partials/components/reset-pass-form.html"></include> -->
           </div>
         </div>
       </section>

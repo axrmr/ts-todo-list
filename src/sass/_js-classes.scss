@@ -5,10 +5,6 @@
   z-index: -1;
 }
 
-.signInViaEmailFormhighlight-font {
-  color: red;
-}
-
 .append-animation {
   animation: append-animate 0.5s linear;
 }
@@ -17,10 +13,33 @@
   transform: scale(0.6);
 }
 
-.slide-left {
-  transform: translateX(-120%);
+.reg-visible {
+  transform: translateY(-35%);
 }
 
-.slide-top {
-  transform: translateY(-100%);
+.back-to-login-visible {
+  transform: translateY(0%);
+}
+
+.login-visible {
+  transform: translateY(-70%);
+}
+
+.slide-left {
+  transform: translateX(-220%);
+}
+
+.slide-right {
+  transform: translateX(150%);
+}
+
+.slide-bottom {
+  transform: translateX(0%);
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: scale(1.1);
 }

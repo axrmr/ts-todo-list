@@ -1,40 +1,39 @@
+import { AuthErrorCodes } from 'firebase/auth';
+
+import { PromiseError } from 'src/types/types';
+
 import AuthAPI from '../../../API/AuthAPI';
 import getRefs from '../../getRefs';
-import showRegisterError from './showRegisterError';
+import showErrorMessage from '../../showErrorMessage';
 import validatePassword from './validatePassword';
 
 const refs = getRefs();
 
-const toggleFormVisibility = () => {
-  refs.regForm.classList.toggle('translate-left');
-  refs.logInForm.classList.toggle('translate-left');
-  const introAuthBtnsDivs = document.querySelectorAll('.intro-btns-wrap > div');
-  introAuthBtnsDivs.forEach(div => {
-    div.classList.toggle('translate-top');
-  });
-};
+refs.regForm.addEventListener('submit', onSubmitRegister);
 
-const onSubmitRegister = (e: SubmitEvent) => {
+function onSubmitRegister(e: any) {
   e.preventDefault();
-
-  const email = refs.regFormEmail.value.trim();
-  const password = refs.regFormPsw.value.trim();
-  const confirmPsw = refs.regFormConfirmPsw.value.trim();
+  const form = e.currentTarget;
+  const email = form.email.value.trim();
+  const password = form.password.value.trim();
+  const confirmPsw = form.confirmPsw.value.trim();
 
   if (!email || !validatePassword(password, confirmPsw)) return;
 
   AuthAPI.registerEmailPassword(email, password)
     .then(() => {
-      toggleFormVisibility();
-      refs.regForm.reset();
+      form.reset();
     })
-    .catch(err => {
-      showRegisterError(err);
-    });
-};
+    .catch(showRegisterError);
+}
 
-refs.regForm.addEventListener('submit', onSubmitRegister);
-refs.forgotPswBtn.addEventListener('click', () => {
-  refs.resetPswForm.classList.add('translate-left');
-  toggleFormVisibility();
-});
+function showRegisterError(err: PromiseError) {
+  if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
+    showErrorMessage({
+      elems: [refs.regEmailError],
+      message: 'Email already in use.',
+    });
+  } else {
+    alert(err.message);
+  }
+}

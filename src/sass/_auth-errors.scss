@@ -1,0 +1,22 @@
+.reg-confirm-psw-err,
+.reg-psw-err,
+.reg-email-err,
+.log-email-err,
+.log-psw-err,
+.reset-psw__err {
+  position: absolute;
+  bottom: -22px;
+  left: 20px;
+  z-index: 1;
+  display: block;
+  padding: 0 10px;
+  font-size: 14px;
+  text-align: left;
+  color: red;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
