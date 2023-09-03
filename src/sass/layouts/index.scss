@@ -6,6 +6,21 @@
 @import '../components/auth-forms';
 @import '../components/reset-psw';
 @import '../components/container';
+@import '../components/icons-list';
 
 @import '../sections/hero';
+
 @import '../js-classes';
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient-main no-repeat;
+  background-size: cover;
+}

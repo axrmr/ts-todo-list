@@ -1,0 +1,32 @@
+.icons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--off-top {
+    margin-top: 30px;
+  }
+
+  // .icons-list__item
+
+  &__item {
+    & + & {
+      margin-left: 20px;
+    }
+
+    &--opacity {
+      opacity: 0.7;
+    }
+  }
+
+  // .icons-list__icon
+
+  &__icon {
+    cursor: pointer;
+
+    &--google {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

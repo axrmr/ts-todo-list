@@ -1,8 +1,14 @@
-import {Task} from '../types/types';
+import { Task } from '../types/types';
 
 export default function saveTasks(tasks: Task[], key: string) {
   try {
-    const serializedState = JSON.stringify(tasks);
+    const userJSON = localStorage.getItem(key);
+    const user = userJSON !== null ? JSON.parse(userJSON) : {};
+    const userData = {
+      ...user,
+      tasks: [...tasks],
+    };
+    const serializedState = JSON.stringify(userData);
 
     if (serializedState == 'null' || serializedState === undefined)
       throw new Error();

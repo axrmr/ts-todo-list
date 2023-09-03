@@ -5,3 +5,11 @@ export type Task = {
 };
 
 export type PromiseError = { code: string; message: string };
+
+export type User = {
+  uid: string;
+  name: string | null;
+  email: string | null;
+  avatar?: string | null;
+  tasks?: Task[];
+};

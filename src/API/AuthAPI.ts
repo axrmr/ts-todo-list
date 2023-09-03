@@ -1,12 +1,15 @@
 import { initializeApp } from 'firebase/app';
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from 'firebase/auth';
 
+const provider = new GoogleAuthProvider();
 const firebaseApp = initializeApp({
   apiKey: 'AIzaSyDE2eZOzVGpbT0s2LB6pZHlEBUSNwWOv-Q',
   authDomain: 'ts-todo-project.firebaseapp.com',
@@ -49,5 +52,9 @@ export default class AuthAPI {
 
   static async sendResetPswEmail(email: string) {
     return await sendPasswordResetEmail(auth, email);
+  }
+
+  static async signInWithGooglePopup() {
+    return await signInWithPopup(auth, provider);
   }
 }

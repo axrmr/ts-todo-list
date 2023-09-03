@@ -1,6 +1,8 @@
 import { Task } from '../types/types';
 
 export default function addTask(tasks: Task[], rootEl: HTMLElement) {
+  if (!tasks) return;
+
   const markup = tasks.map(({ id, value, isCompleted }) => {
     return `
         <li id=${id} class="task" >

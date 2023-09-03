@@ -7,6 +7,7 @@ export default function getRefs() {
     deleteTaskBtn: document.getElementById(
       'deleteTaskBtn'
     ) as HTMLButtonElement,
+    inputFile: document.getElementById('inputFile') as HTMLInputElement,
     logInForm: document.getElementById('logInForm') as HTMLFormElement,
     logInEmail: document.getElementById('logInFormEmail') as HTMLInputElement,
     logInPsw: document.getElementById('logInFormPsw') as HTMLInputElement,
@@ -35,10 +36,12 @@ export default function getRefs() {
     resetPswForm: document.getElementById('resetPswForm') as HTMLFormElement,
     resetPswWrap: document.getElementById('resetPswWrap') as HTMLDivElement,
     resetPswErr: document.getElementById('resetPswErr') as HTMLSpanElement,
-    heroBtnsList: document.getElementById('heroBtnsList') as HTMLUListElement,
+    heroBtnList: document.getElementById('heroBtnsList') as HTMLUListElement,
     taskInput: document.getElementById('taskInput') as HTMLInputElement,
     tasksList: document.getElementById('tasksList') as HTMLUListElement,
-
+    googleIcon: document.getElementById('googleIcon') as HTMLOrSVGImageElement,
     forgotPswBtn: document.getElementById('forgotPswBtn') as HTMLButtonElement,
+    profileName: document.getElementById('profileName') as HTMLTitleElement,
+    profileNick: document.getElementById('profileNick') as HTMLSpanElement,
   };
 }

@@ -1,7 +1,8 @@
 .tasks-list {
-  min-height: 23dvh;
-  padding: 30px 30px 20px 20px;
-  border-radius: 24px;
+  height: 30vh;
+  padding: 30px 30px 20px;
+  overflow: auto;
+  border-radius: 14px;
   background: #fff;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 }
@@ -34,12 +35,12 @@
 
       &:checked + .task__custom-check {
         opacity: 1;
-        background-color: $cl-sec-accent;
+        background-color: $cl-accent-sec;
         border-radius: 50%;
         border-color: transparent;
       }
       &:checked ~ .task__name {
-        opacity: 0.5;
+        opacity: 0.2;
       }
       &:checked ~ .task__name::after {
         width: 100%;
@@ -57,7 +58,6 @@
     border: 1px solid #0f4e52;
     transition: border-color $transition, border-radius $transition,
       background-color $transition;
-    cursor: pointer;
   }
 
   &__name {

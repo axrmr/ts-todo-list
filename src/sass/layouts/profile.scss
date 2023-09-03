@@ -7,3 +7,9 @@
 @import '../components/tasks-list';
 
 @import '../sections/profile';
+
+@import '../js-classes';
+
+body {
+  background-color: $cl-accent-sec;
+}

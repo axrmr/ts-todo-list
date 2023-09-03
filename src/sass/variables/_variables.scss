@@ -3,10 +3,10 @@ $ff-main: 'Poppins', sans-serif;
 $cl-light: #fff;
 $cl-dark: #000;
 $cl-accent: #d8605b;
-$cl-sec-accent: #f4c27f;
+$cl-accent-sec: #f4c27f;
 $cl-bg-main: rgba(244, 194, 127, 0.67);
 
-$gradient-main: linear-gradient(218deg, $cl-accent 0%, $cl-sec-accent 100%);
+$gradient-main: linear-gradient(218deg, $cl-accent 0%, $cl-accent-sec 100%);
 
 $transition: 0.2s ease-in-out;
 $form-transition: 0.5s ease-in-out;

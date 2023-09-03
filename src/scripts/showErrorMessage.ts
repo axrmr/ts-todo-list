@@ -1,21 +1,21 @@
 interface ShowErrorMessageProps {
   message: string;
-  elems: HTMLElement[];
+  refs: HTMLElement[];
   ms?: number;
 }
 
 export default function showErrorMessage({
-  elems,
+  refs,
   message,
   ms = 3000,
 }: ShowErrorMessageProps) {
-  elems.forEach(el => {
+  refs.forEach(el => {
     el.textContent = message;
     el.classList.add('visible');
   });
 
   const id = setTimeout(() => {
-    elems.forEach(el => {
+    refs.forEach(el => {
       el.classList.remove('visible');
     });
     clearTimeout(id);

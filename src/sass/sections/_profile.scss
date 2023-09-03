@@ -1,13 +1,13 @@
 .profile {
-  background-color: $cl-sec-accent;
-
   // .profile__head
 
   &__head {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 320px;
     padding: 30px 0;
+    animation: scale 1.2s alternate;
   }
 
   // .profile__img
@@ -53,7 +53,7 @@
   &__add-img-icon {
     font-size: 60px;
     color: $cl-accent;
-    opacity: 0.6;
+    opacity: 0;
     transition: opacity $transition;
 
     &:hover,
@@ -64,12 +64,13 @@
 
   // .profile__title
 
-  &__title {
-    margin: 0 0 2px;
+  &__name {
+    margin: 0;
+    margin-bottom: 5px;
     font-size: 25px;
     font-weight: 500;
     text-align: center;
-    line-height: 115.688%; /* 16.196px */
+    line-height: 115.688%;
     letter-spacing: 0.7px;
     color: $cl-dark;
   }
@@ -79,7 +80,7 @@
     font-size: 18px;
     font-weight: 500;
     text-align: center;
-    line-height: 115.688%; /* 11.569px */
+    line-height: 115.688%;
     letter-spacing: 0.5px;
     color: $cl-accent;
   }
@@ -95,7 +96,7 @@
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: 600;
-    line-height: 115.688%; /* 20.824px */
+    line-height: 115.688%;
     letter-spacing: 1.08px;
     color: $cl-dark;
     opacity: 0.75;

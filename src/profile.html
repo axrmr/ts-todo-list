@@ -29,8 +29,8 @@
                 <span class="profile__add-img-icon">+</span>
               </label>
             </div>
-            <h2 class="profile__title">Monica Gamage</h2>
-            <span class="profile__nickname">@monicagamage</span>
+            <h2 id="profileName" class="profile__name"></h2>
+            <span id="profileNick" class="profile__nickname"></span>
             <button id="logOutBtn" class="logout-btn">Log Out</button>
           </div>
           <div class="profile__body">
@@ -39,8 +39,10 @@
             <include src="./partials/components/tasks-list.html"></include>
           </div>
         </div>
+        <include src="./partials/components/loader.html"></include>
       </section>
     </main>
+
     <script type="module" src="./profile.ts"></script>
   </body>
 </html>
