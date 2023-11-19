@@ -2,7 +2,6 @@
   "name": "ts-todo-list",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/todo-ts",
   "scripts": {
     "start": "parcel src/*.html --port 4000",
     "build": "parcel build src/*.html --public-url /ts-todo-list/"
