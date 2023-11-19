@@ -1,15 +1,15 @@
 {
-  "name": "todo-ts",
+  "name": "ts-todo-list",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://goitacademy.github.io/todo-ts",
   "scripts": {
     "start": "parcel src/*.html --port 4000",
-    "build": "parcel build src/*.html --public-url /todo/"
+    "build": "parcel build src/*.html --public-url /ts-todo-list/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/todo-ts.git"
+    "url": "git+https://github.com/goitacademy/ts-todo-list.git"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
