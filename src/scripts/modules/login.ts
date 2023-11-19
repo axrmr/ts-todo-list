@@ -22,18 +22,18 @@ function onSubmitLogIn(e: any) {
 
   loader.show();
   AuthAPI.logInEmailPassword(email, password)
-    .then(res => {
+    .then((res) => {
       window.location.replace('../profile.html');
       form.reset();
 
       return res;
     })
     .catch(showLogInError)
-    .finally(loader.hide);
+    .finally(() => loader.hide());
 }
 
 function onClickGoogleIcon() {
-  AuthAPI.signInWithGooglePopup().then(res => {
+  AuthAPI.signInWithGooglePopup().then((res) => {
     window.location.href = '../../profile.html';
 
     return res;
